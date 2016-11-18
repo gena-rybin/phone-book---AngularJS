@@ -1,10 +1,16 @@
 'use strict';
 
-app.controller('phoneBookCtrl', function ($scope, $state, loadFromJsonService) {
+app.controller('phoneBookCtrl', function ($scope,
+                                          $state,
+                                          loadFromJsonService) {
 
-    $scope.users = loadFromJsonService;
+  //  $scope.writeLS = localStorageService.write;
 
-   // $scope.data = loadFromJSON.getData;  //doesn't work
+    loadFromJsonService.getData().then(function (res) {
+        $scope.users = res;
+        console.log($scope.users);
+    });  //doesn't work
+
 
     $scope.functionGoToEditePage = functionGoToEditePage;
 
@@ -12,6 +18,7 @@ app.controller('phoneBookCtrl', function ($scope, $state, loadFromJsonService) {
         console.log(user +'  '+ index);
         $state.go('edit', {item:{user: user, index: index}});
     }
+
 
 
 });
