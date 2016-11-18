@@ -1,9 +1,9 @@
-<div ng-controller="phoneBookCtrl">
+<div >
 
-    <p>All users:</p>
+    <p id="info">All users:</p>
 
     <div id="shortInfo">
-        <div ng-repeat="user in data" ng-click="clickedUser(user)">
+        <div ng-repeat="user in users" ng-click="functionGoToEditePage(user, $index)">
             <div >
                 <span>{{user.general.firstName  + ',  ' + user.job.title +'  '}}</span>
                 <img src="{{user.general.avatar}}" alt="user.general.firstName" style="height:64px">

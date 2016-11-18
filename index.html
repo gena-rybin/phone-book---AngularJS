@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>08</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <h1>#08 task</h1>
     <h4>phone book with Angular</h4>
 
+    <div  ui-view></div>
 
-
-    <div ng-include="'app/controllers/main/main.html'"></div>
+    <!--<div ng-include="'app/controllers/main/main.html'"></div>-->
 
 
 </body>
 <script src="node_modules/angular/angular.min.js"></script>
-<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 <script src="node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
 <script src="app/app.js"></script>
 <script src="app/controllers/main/main.controller.js"></script>
 <script src="app/controllers/main/main.js"></script>
+<script src="app/controllers/edit/edit.controller.js"></script>
+<script src="app/controllers/edit/edit.js"></script>
 <script src="app/services/JsonToObject/JsonToObject.js"></script>
+<script src="app/services/showFullInfo/showFullInfo.js"></script>
 </html>
