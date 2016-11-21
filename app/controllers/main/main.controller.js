@@ -22,7 +22,6 @@ app.controller('phoneBookCtrl', function ($scope,
         localStorageService.write(res);
     });
 
-
     $scope.clearLS = localStorageService.clear;
 
     $scope.functionGoToEditePage = functionGoToEditePage;
