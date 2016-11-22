@@ -3,7 +3,7 @@
         <p>full info:</p>
         <div >
             <h3>
-                <input type="text" name="userCompany" ng-model="user.general.firstName"  ng-blur="functionShowData()"/> {{user.general.lastName}}
+                <input type="text" name="userCompany" ng-model="user.general.firstName" ng-blur="functionChangeUserData()"/> {{user.general.lastName}}
                 <img src="{{user.general.avatar}}" alt="{{user.general.firstName}}">
                 <div class="controls">
                     <button id="btnBack" ng-click="functionGoToMainPage()">Back to main page</button>
@@ -16,10 +16,10 @@
             <p>
                 <form name="userJob">
                     <label>title:
-                        <input type="text" name="userTitle" ng-model="user.job.title" ng-blur="functionShowData()" />
+                        <input type="text" name="userTitle" ng-model="user.job.title" ng-blur="functionChangeUserData()" />
                     </label>
                     <label>, in company:
-                        <input type="text" name="userCompany" ng-model="user.job.company" />
+                        <input type="text" name="userCompany" ng-model="user.job.company" ng-blur="functionChangeUserData()"/>
                     </label>
                 </form>
             </p>
@@ -27,10 +27,10 @@
             <p>
                 <form name="userContact">
                     <label>e-mail:
-                        <input type="text" name="userMail" ng-model="user.contact.email" />
+                        <input type="text" name="userMail" ng-model="user.contact.email"  ng-blur="functionChangeUserData()"/>
                     </label>
                     <label>, phone:
-                        <input type="text" name="userPhone" ng-model="user.contact.phone" />
+                        <input type="text" name="userPhone" ng-model="user.contact.phone"  ng-blur="functionChangeUserData()"/>
                     </label>
                 </form>
             </p>
@@ -38,16 +38,16 @@
             <p>
                 <form name="userAddress">
                     <label>street:
-                        <input type="text" name="userAddrStreet" ng-model="user.address.street" />
+                        <input type="text" name="userAddrStreet" ng-model="user.address.street"  ng-blur="functionChangeUserData()"/>
                     </label>
                     <label>, city:
-                        <input type="text" name="userAddrCity" ng-model="user.address.city" />
+                        <input type="text" name="userAddrCity" ng-model="user.address.city"  ng-blur="functionChangeUserData()"/>
                     </label>, <br>
                     <label>zipCode:
-                        <input type="text" name="userAddrZip" ng-model="user.address.zipCode" size="18" />
+                        <input type="text" name="userAddrZip" ng-model="user.address.zipCode" size="18"  ng-blur="functionChangeUserData()"/>
                     </label>
                     <label>, country:
-                        <input type="text" name="userAddrCountry" ng-model="user.address.country"  size="17" />
+                        <input type="text" name="userAddrCountry" ng-model="user.address.country"  size="17"  ng-blur="functionChangeUserData()"/>
                     </label>
                 </form>
             </p>

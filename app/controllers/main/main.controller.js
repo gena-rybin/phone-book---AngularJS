@@ -6,6 +6,7 @@ app.controller('phoneBookCtrl', function ($scope,
 
   //  $scope.writeLS = localStorageService.write;
 
+
     localStorageService.getList().then(function(res){
         $scope.users = res;
     });
@@ -26,13 +27,26 @@ app.controller('phoneBookCtrl', function ($scope,
 
     $scope.clearLS = localStorageService.clear;
 
+    $scope.filtered;
+
+    $scope.functionFindByName = functionFindByName;
+    function functionFindByName () {
+        if ($scope.inpName) {
+            $scope.filtered = $scope.users.filter(function (user) {
+                return user.general.firstName.toLowerCase().match($scope.inpName);
+            });
+            $scope.users = $scope.filtered;
+            return;
+        }
+
+    }
+
     $scope.functionGoToEditePage = functionGoToEditePage;
 
     function functionGoToEditePage (user) {
         console.log(user);
         $state.go('edit', {item:{user: user}});
     }
-
 
 
 });
