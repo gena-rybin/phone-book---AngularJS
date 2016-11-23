@@ -8,7 +8,9 @@ app.controller('phoneBookCtrl', function ($scope,
 
 
     localStorageService.getList().then(function(res){
+        $scope.filtered = res;
         $scope.users = res;
+        usersClon = res;
     });
 
     // if localStorage is full - take data from it
@@ -28,17 +30,15 @@ app.controller('phoneBookCtrl', function ($scope,
     $scope.clearLS = localStorageService.clear;
 
     $scope.filtered;
-
+    var usersClon;
     $scope.functionFindByName = functionFindByName;
     function functionFindByName () {
+        $scope.filtered = usersClon;
         if ($scope.inpName) {
-            $scope.filtered = $scope.users.filter(function (user) {
+            $scope.filtered = usersClon.filter(function (user) {
                 return user.general.firstName.toLowerCase().match($scope.inpName);
             });
-            $scope.users = $scope.filtered;
-            return;
         }
-
     }
 
     $scope.functionGoToEditePage = functionGoToEditePage;

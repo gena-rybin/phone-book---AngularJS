@@ -16,6 +16,7 @@ app.service('localStorageService', function(loadFromJsonService, $q, $http) {
             this.write(data);
         },
         getList: function() {
+            var self = this;
             var deferred = $q.defer();
             var obj = JSON.parse(localStorage.getItem(key));
             if(obj){
@@ -26,6 +27,7 @@ app.service('localStorageService', function(loadFromJsonService, $q, $http) {
                     // this callback will be called asynchronously
                     // when the response is available
                     data = response.data;
+                    self.write(response.data);
                     deferred.resolve(response.data);
                 }).catch(function (response) {
                     // called asynchronously if an error occurs

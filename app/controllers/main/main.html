@@ -3,13 +3,13 @@
 
     <label for="inpFilter">
         Filter for users below:
-        <input type="text" id="inpFilter" ng-model="inpName" ng-keyup="functionFindByName()"/>
+        <input type="text" id="inpFilter" ng-model="inpName" ng-change="functionFindByName()"/>
     </label>
 
     <p id="info">All users:</p>
 
     <div id="shortInfo">
-        <div ng-repeat="user in users" ng-click="functionGoToEditePage(user, $index)">
+        <div ng-repeat="user in filtered" ng-click="functionGoToEditePage(user, $index)">
             <div >
                 <span>{{user.general.firstName}}, {{user.job.title}}</span>
                 <img ng-src="{{user.general.avatar}}" alt="{{user.general.firstName}}" style="height:64px">
