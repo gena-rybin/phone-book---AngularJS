@@ -1,22 +1,32 @@
-<div >
+<div>
+    <div class="form-inline">
+        <div class="form-group">
+            <label for="inpFilter">
+                <mark>Filter for users below:</mark>
+                <input type="text" id="inpFilter" ng-model="inpName" ng-change="functionFindByName()" class="form-control input-sm"/>
+            </label>
+            <button ng-click="clearLS()" class="btn btn-warning" >clear storage</button>
+        </div>
+    </div>
+    <br>
 
-
-    <label for="inpFilter">
-        Filter for users below:
-        <input type="text" id="inpFilter" ng-model="inpName" ng-change="functionFindByName()"/>
-    </label>
+    <br><br>
 
     <p id="info">All users:</p>
-
-    <div id="shortInfo">
-        <div ng-repeat="user in filtered" ng-click="functionGoToEditePage(user, $index)">
-            <div >
-                <span>{{user.general.firstName}}, {{user.job.title}}</span>
-                <img ng-src="{{user.general.avatar}}" alt="{{user.general.firstName}}" style="height:64px">
+    <div class="row">
+        <div class="col-md-6 col-sm-6" >
+            <div ng-repeat="user in filtered" ng-click="functionGoToEditePage(user, $index)">
+                <div class="clearfix row">
+                    <span >{{user.general.firstName}}, <em>{{user.job.title}}</em></span>
+                    <span >
+                        <img ng-src="{{user.general.avatar}}" alt="{{user.general.firstName}}" style="height:64px" class="pull-right img-rounded" >
+                    </span>
+                </div>
             </div>
         </div>
     </div>
-<button ng-click="clearLS()">clear storage</button>
+
+
 
 </div>
 

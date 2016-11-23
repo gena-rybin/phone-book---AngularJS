@@ -1,56 +1,54 @@
 
     <div id="fullInfo"  >
         <p>full info:</p>
-        <div >
-            <h3>
-                <input type="text" name="userCompany" ng-model="user.general.firstName" ng-blur="functionChangeUserData()"/> {{user.general.lastName}}
+        <div class="form-inline">
+            <div class="form-group">
+                <input type="text" name="userCompany" ng-model="user.general.firstName" ng-blur="functionChangeUserData()" class="form-control input-sm"/>
+                {{user.general.lastName}}
                 <img src="{{user.general.avatar}}" alt="{{user.general.firstName}}">
                 <div class="controls">
-                    <button id="btnBack" ng-click="functionGoToMainPage()">Back to main page</button>
+                    <button id="btnBack" ng-click="functionGoToMainPage()" class="btn btn-info">Back to main page</button>
                 </div>
-            </h3>
+            </div>
 
-            <p>index: {{index}} </p>
-            <br>
             <p><b>Job:</b></p>
-            <p>
-                <form name="userJob">
-                    <label>title:
-                        <input type="text" name="userTitle" ng-model="user.job.title" ng-blur="functionChangeUserData()" />
+                <div class="form-group">
+                    <label  class="control-label">title:
+                        <input type="text" name="userTitle" ng-model="user.job.title" ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
                     <label>, in company:
-                        <input type="text" name="userCompany" ng-model="user.job.company" ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userCompany" ng-model="user.job.company" ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
-                </form>
-            </p>
+                </div>
+            <br><br>
+
             <p><b>Contact info:</b></p>
-            <p>
-                <form name="userContact">
+                <div name="userContact"  class="form-group">
                     <label>e-mail:
-                        <input type="text" name="userMail" ng-model="user.contact.email"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userMail" ng-model="user.contact.email"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
                     <label>, phone:
-                        <input type="text" name="userPhone" ng-model="user.contact.phone"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userPhone" ng-model="user.contact.phone"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
-                </form>
-            </p>
+                </div>
+            <br><br>
+
             <p><b>Address:</b></p>
-            <p>
-                <form name="userAddress">
+                <div name="userAddress"  class="form-group">
                     <label>street:
-                        <input type="text" name="userAddrStreet" ng-model="user.address.street"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userAddrStreet" ng-model="user.address.street"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
                     <label>, city:
-                        <input type="text" name="userAddrCity" ng-model="user.address.city"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userAddrCity" ng-model="user.address.city"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>, <br>
                     <label>zipCode:
-                        <input type="text" name="userAddrZip" ng-model="user.address.zipCode" size="18"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userAddrZip" ng-model="user.address.zipCode" size="18"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
                     <label>, country:
-                        <input type="text" name="userAddrCountry" ng-model="user.address.country"  size="17"  ng-blur="functionChangeUserData()"/>
+                        <input type="text" name="userAddrCountry" ng-model="user.address.country"  size="17"  ng-blur="functionChangeUserData()" class="form-control input-sm"/>
                     </label>
-                </form>
-            </p>
+                </div>
+
 
 
 
